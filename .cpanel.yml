@@ -1,0 +1,26 @@
+---
+version: 2               # versiunea sintaxei .cpanel.yml
+
+environment:
+  # Schimbă 'caminulh' cu propriul tău nume de utilizator cPanel
+  DEPLOY_PATH: /home/caminulh/public_html
+
+deployment:
+  tasks:
+    # 1) Șterge vechiul conținut din public_html
+    - /bin/rm -rf $DEPLOY_PATH/css \
+                $DEPLOY_PATH/js \
+                $DEPLOY_PATH/images \
+                $DEPLOY_PATH/fonts \
+                $DEPLOY_PATH/scss \
+                $DEPLOY_PATH/*.html
+
+    # 2) Copiază folderele de resurse
+    - /bin/cp -R css     $DEPLOY_PATH
+    - /bin/cp -R js      $DEPLOY_PATH
+    - /bin/cp -R images  $DEPLOY_PATH
+    - /bin/cp -R fonts   $DEPLOY_PATH
+    - /bin/cp -R scss    $DEPLOY_PATH
+
+    # 3) Copiază fișierele .html
+    - /bin/cp *.html     $DEPLOY_PATH
