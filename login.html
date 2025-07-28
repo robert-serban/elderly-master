@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" class="login-page">
 
 
   <div id="overlayer"></div>
@@ -79,7 +79,7 @@
 
     </header>
     <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-      <form class="p-5 bg-light" style="min-width: 300px;" action="#" method="post">
+      <form class="p-5 bg-light login-form-container" style="min-width: 300px;" action="/login" method="post">
         <h2 class="mb-4 text-center">Login</h2>
         <div class="form-group">
           <label for="login-email">Email</label>
@@ -90,6 +90,7 @@
           <input type="password" class="form-control" id="login-password" placeholder="Password">
         </div>
         <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+        <p class="mt-3 small text-muted text-center">Demo account: test@example.com / test123</p>
       </form>
     </div>
 </div> <!-- .site-wrap -->
