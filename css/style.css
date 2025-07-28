@@ -1034,3 +1034,18 @@ figure figcaption {
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+
+/* Login page styles */
+.login-page {
+    background: url("../images/img_2.jpg") center center/cover no-repeat fixed;
+    color: #fff;
+}
+
+.login-form-container {
+    background: rgba(0,0,0,0.6);
+    border-radius: 8px;
+}
+
+.login-form-container label {
+    color: #fff;
+}

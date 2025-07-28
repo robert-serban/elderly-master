@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Invoices</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class="p-4">
+  <h1 class="mb-4">Invoices & Proformas</h1>
+  <table class="table" id="invoice-table">
+    <thead>
+      <tr><th>ID</th><th>Client</th><th>Total</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    fetch('/api/invoices')
+      .then(r => r.json())
+      .then(data => {
+        const tbody = document.querySelector('#invoice-table tbody');
+        (data.invoices || []).forEach(inv => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${inv.id}</td><td>${inv.clientName}</td><td>${inv.total}</td>`;
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(err => console.error(err));
+  </script>
+</body>
+</html>
